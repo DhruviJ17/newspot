@@ -1,0 +1,18 @@
+{% extends 'Newsania/main.html' %}
+
+{% block content %}
+<body bgcolor="pink">
+<h1>A picture is worth a thousand words</h1>
+<form action="{% url 'Image' %}" method="post">
+    {% csrf_token %}
+    {% for image in images %}
+    <div class="media-left">
+        >><figure>
+            <img src="{{image}}" alt="" width="20%" height="auto">
+          </figure>
+    </div>
+    {% endfor%}
+</form>
+<a href="{% url 'home' %}">GOTO HOME</a>
+</body>
+{% endblock %}

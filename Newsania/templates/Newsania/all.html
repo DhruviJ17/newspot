@@ -1,0 +1,46 @@
+{% extends 'Newsania/main.html' %}
+
+{% block content %}
+<style>
+p{
+  color: purple;
+  font-family: courier;
+  font-size: 100%;
+  border: 2px dotted maroon;
+}
+div{
+  color: red;
+  border: 2px dashed black;
+  }
+
+
+</style>
+
+<body bgcolor="pink">
+<h1>The Best Place for News in the Best Place on Earth</h1>
+    <section class="section">
+            <div class="columns">
+                    {% for publishers_list, titles_list, description_list, image_list in newws %}
+                    <div class="box">
+                        <div class="media-left">
+                               >*+*<<figure>
+                                    <img src="{{image_list}}" alt="" width="20%" height="auto">
+                                 </figure>
+                        </div>
+                        <div class="content">
+                            <p>
+                                <span class="publishers">{{publishers_list}}</span>
+                                <br>
+                                <span class="title">{{ titles_list }}</span>
+                                <br>
+                                <span class="description">{{description_list}}</span>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+            </div>
+    </section>
+<a href="{% url 'home' %}">GOTO HOME</a>
+</body>
+{% endblock %}

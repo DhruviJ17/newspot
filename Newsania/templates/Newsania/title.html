@@ -1,0 +1,31 @@
+{% extends 'Newsania/main.html' %}
+
+{% block content %}
+<style>
+h3{
+  color: red;
+  font-family: courier;
+  font-size: 150%;
+
+}
+div{
+  color: red;
+  border: 2px dotted black;
+  }
+
+
+</style>
+
+<body bgcolor="pink">
+<h1>TOP HOT HEADLINES!</h1>
+<form action="{% url 'Title' %}" method="post">
+    {% csrf_token %}
+    {% for title in titles %}
+    <div>
+        <h3>#{{title}}</h3>
+    </div>
+    {% endfor%}
+</form>
+<a href="{% url 'home' %}">GOTO HOME</a>
+</body>
+{% endblock %}

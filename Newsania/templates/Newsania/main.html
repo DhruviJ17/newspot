@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Newsania </title>
+</head>
+{% block content %}
+<body bgcolor="yellow">
+<h1>WELCOME TO NEWSANIA</h1>
+<p>
+    <a href="{% url 'news' %}">LATEST NEWS</a><br>
+    <a href="{% url 'Title' %}">NEWS HEADLINES ONLY</a><br>
+    <a href="{% url 'Image' %}">NEWS IMAGES ONLY</a><br>
+</p>
+</body>
+{% endblock %}
+</html>
